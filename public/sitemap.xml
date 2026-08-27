@@ -3,32 +3,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/news/example-post/</loc>
+    <loc>http://localhost:1313/p-sscrm/news/example-post/</loc>
     <lastmod>2026-08-27T14:32:48-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/controls/example-control/</loc>
+    <loc>http://localhost:1313/p-sscrm/controls/example-control/</loc>
   </url><url>
-    <loc>http://localhost:1313/groups/example-group/</loc>
+    <loc>http://localhost:1313/p-sscrm/groups/example-group/</loc>
   </url><url>
-    <loc>http://localhost:1313/practices/example-practice/</loc>
+    <loc>http://localhost:1313/p-sscrm/practices/example-practice/</loc>
   </url><url>
-    <loc>http://localhost:1313/news/</loc>
+    <loc>http://localhost:1313/p-sscrm/news/</loc>
     <lastmod>2026-08-27T14:32:48-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/p-sscrm/</loc>
     <lastmod>2026-08-27T14:32:48-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://localhost:1313/p-sscrm/about/</loc>
     <lastmod>2026-08-27T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/p-sscrm/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/controls/</loc>
+    <loc>http://localhost:1313/p-sscrm/controls/</loc>
   </url><url>
-    <loc>http://localhost:1313/groups/</loc>
+    <loc>http://localhost:1313/p-sscrm/groups/</loc>
   </url><url>
-    <loc>http://localhost:1313/practices/</loc>
+    <loc>http://localhost:1313/p-sscrm/practices/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/p-sscrm/tags/</loc>
   </url>
 </urlset>
