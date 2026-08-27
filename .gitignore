@@ -1,0 +1,25 @@
+# Hugo build output
+/public/
+/resources/_gen/
+/.hugo_build.lock
+
+# Hugo asset cache
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (only relevant if you later add Decap CMS or any JS tooling)
+node_modules/
+npm-debug.log*
+
+# Env / secrets
+.env
+.env.local
