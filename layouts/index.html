@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <h1>{{ .Site.Title }}</h1>
+    {{ with .Site.GetPage "/about" }}
+      <div class="hero-intro">
+        {{ .Content }}
+      </div>
+      <a class="btn" href="{{ .Permalink }}">Read More</a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

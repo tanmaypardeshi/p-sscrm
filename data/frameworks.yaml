@@ -1,0 +1,49 @@
+nist80161:
+  name: "NIST SP 800-161"
+  full_name: "Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations"
+  url: "https://csrc.nist.gov/pubs/sp/800/161/r1/final"
+
+slsa:
+  name: "SLSA"
+  full_name: "Supply-chain Levels for Software Artifacts"
+  url: "https://slsa.dev"
+
+bsimm:
+  name: "BSIMM"
+  full_name: "Building Security In Maturity Model"
+  url: "https://www.bsimm.com"
+
+ssdf:
+  name: "NIST SSDF"
+  full_name: "Secure Software Development Framework (SP 800-218)"
+  url: "https://csrc.nist.gov/pubs/sp/800/218/final"
+
+samm:
+  name: "OWASP SAMM"
+  full_name: "Software Assurance Maturity Model"
+  url: "https://owaspsamm.org"
+
+scvs:
+  name: "OWASP SCVS"
+  full_name: "Software Component Verification Standard"
+  url: "https://owasp.org/www-project-software-component-verification-standard/"
+
+cra:
+  name: "EU CRA"
+  full_name: "EU Cyber Resilience Act"
+  url: "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act"
+
+iso27034:
+  name: "ISO/IEC 27034"
+  full_name: "Application Security"
+  url: "https://www.iso.org/standard/44378.html"
+
+cisco_sscrm:
+  name: "CISA SCRM"
+  full_name: "Cybersecurity and Infrastructure Security Agency ICT SCRM"
+  url: "https://www.cisa.gov/supply-chain"
+
+spdx:
+  name: "SPDX / SBOM"
+  full_name: "Software Package Data Exchange / Software Bill of Materials"
+  url: "https://spdx.dev"

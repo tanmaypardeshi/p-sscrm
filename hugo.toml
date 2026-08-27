@@ -1,0 +1,3 @@
+baseURL = 'https://example.org/'
+locale = 'en-us'
+title = 'P-SSCRM: Proactive Secure Softwre Supply Chain Risk Management'
