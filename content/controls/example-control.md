@@ -1,9 +1,9 @@
 ---
 title: "Example Control"
-code: ""
-practice: ""
+code: "G1.P1.C1"
+practice: "example-practice"
 weight: 10
-draft: true
+draft: false
 frameworks:
   nist80161: ""
   slsa: ""

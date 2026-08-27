@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="container practice-page">
+  <p class="breadcrumb">
+    {{ with .Site.GetPage (printf "/groups/%s" .Params.group) }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+    &raquo; {{ .Title }}
+  </p>
+
+  <h1>{{ if .Params.code }}{{ .Params.code }} — {{ end }}{{ .Title }}</h1>
+
+  {{ .Content }}
+
+  <h2>Controls in this Practice</h2>
+  <ul class="child-list">
+    {{ $thisFile := .File.ContentBaseName }}
+    {{ range where .Site.RegularPages "Section" "controls" }}
+      {{ if eq .Params.practice $thisFile }}
+        <li>
+          <a href="{{ .Permalink }}">{{ if .Params.code }}{{ .Params.code }} — {{ end }}{{ .Title }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</article>
+{{ end }}

@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>P-SSCRM: Proactive Secure Softwre Supply Chain Risk Management</title>
-		<link>http://localhost:1313/p-sscrm/</link>
-		<description>Recent content on P-SSCRM: Proactive Secure Softwre Supply Chain Risk Management</description>
+		<title></title>
+		<link>//localhost:1313/</link>
+		<description>Recent content on </description>
 		<generator>Hugo</generator>
-		<language>en-us</language>
+		<language>en</language>
 		
 		
 		
 		
 			<lastBuildDate>Thu, 27 Aug 2026 14:32:48 -0400</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/p-sscrm/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Example Post</title>
-				<link>http://localhost:1313/p-sscrm/news/example-post/</link>
+				<link>//localhost:1313/news/example-post/</link>
 				<pubDate>Thu, 27 Aug 2026 14:32:48 -0400</pubDate>
-				<guid>http://localhost:1313/p-sscrm/news/example-post/</guid>
+				<guid>//localhost:1313/news/example-post/</guid>
 				<description>&lt;p&gt;Short summary or teaser for this news post goes here.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Example Control</title>
-				<link>http://localhost:1313/p-sscrm/controls/example-control/</link>
+				<link>//localhost:1313/controls/example-control/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/p-sscrm/controls/example-control/</guid>
+				<guid>//localhost:1313/controls/example-control/</guid>
 				<description>&lt;p&gt;Short description of this Control goes here.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Example Group</title>
-				<link>http://localhost:1313/p-sscrm/groups/example-group/</link>
+				<link>//localhost:1313/groups/example-group/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/p-sscrm/groups/example-group/</guid>
+				<guid>//localhost:1313/groups/example-group/</guid>
 				<description>&lt;p&gt;Short description of this Group goes here.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Example Practice</title>
-				<link>http://localhost:1313/p-sscrm/practices/example-practice/</link>
+				<link>//localhost:1313/practices/example-practice/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/p-sscrm/practices/example-practice/</guid>
+				<guid>//localhost:1313/practices/example-practice/</guid>
 				<description>&lt;p&gt;Short description of this Practice goes here.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>About</title>
-				<link>http://localhost:1313/p-sscrm/about/</link>
+				<link>//localhost:1313/about/</link>
 				<pubDate>Thu, 27 Aug 2026 00:00:00 -0400</pubDate>
-				<guid>http://localhost:1313/p-sscrm/about/</guid>
+				<guid>//localhost:1313/about/</guid>
 				<description>&lt;p&gt;P-SSCRM is a framework for managing software supply chain security risk, organized into Groups, Practices, and Controls. Each Control maps to established external standards — including NIST SP 800-161, SLSA, and BSIMM — to help organizations align their supply chain security practices with recognized industry benchmarks.&lt;/p&gt;&#xA;&lt;p&gt;This site documents the framework and its mappings, and will support community contributions as it matures.&lt;/p&gt;</description>
 			</item>
 	</channel>

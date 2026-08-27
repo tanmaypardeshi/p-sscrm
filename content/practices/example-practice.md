@@ -1,9 +1,9 @@
 ---
 title: "Example Practice"
-code: ""
-group: ""
+code: "G1.P1"
+group: "example-group"
 weight: 10
-draft: true
+draft: false
 ---
 
 Short description of this Practice goes here.
