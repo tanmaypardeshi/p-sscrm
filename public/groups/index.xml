@@ -1,22 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Groups on </title>
-		<link>//localhost:1313/groups/</link>
-		<description>Recent content in Groups on </description>
+		<title>Groups on P-SSCRM: Proactive Secure Software Supply Chain Risk Management</title>
+		<link>http://localhost:1313/groups/</link>
+		<description>Recent content in Groups on P-SSCRM: Proactive Secure Software Supply Chain Risk Management</description>
 		<generator>Hugo</generator>
-		<language>en</language>
+		<language>en-us</language>
 		
 		
 		
 		
-			<atom:link href="//localhost:1313/groups/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/groups/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Example Group</title>
-				<link>//localhost:1313/groups/example-group/</link>
+				<title>Governance</title>
+				<link>http://localhost:1313/groups/g/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>//localhost:1313/groups/example-group/</guid>
-				<description>&lt;p&gt;Short description of this Group goes here.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/groups/g/</guid>
+				<description>&lt;p&gt;Controls that focus on the organization, measurement of a secure software supply chain, decision-making policies, accountability to third-party obligations, and compliance with legal and regulatory requirements.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Product</title>
+				<link>http://localhost:1313/groups/p/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/groups/p/</guid>
+				<description>&lt;p&gt;Controls to lead to deploying a secure product with minimal vulnerabilities with associated required attestations and artifacts.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Environment</title>
+				<link>http://localhost:1313/groups/e/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/groups/e/</guid>
+				<description>&lt;p&gt;Controls to protect the confidentiality and integrity of source code, software components, and the build infrastructure from tampering and unauthorized access.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Deployment</title>
+				<link>http://localhost:1313/groups/d/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/groups/d/</guid>
+				<description>&lt;p&gt;Controls for identifying, analyzing, and addressing vulnerabilities in products in production/that have been deployed&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Unassigned</title>
+				<link>http://localhost:1313/groups/u/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/groups/u/</guid>
+				<description>&lt;p&gt;Controls that have been identified but not associated with a framework&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

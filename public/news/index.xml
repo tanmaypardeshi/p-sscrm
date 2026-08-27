@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>News on </title>
-		<link>//localhost:1313/news/</link>
-		<description>Recent content in News on </description>
+		<title>News on P-SSCRM: Proactive Secure Software Supply Chain Risk Management</title>
+		<link>http://localhost:1313/news/</link>
+		<description>Recent content in News on P-SSCRM: Proactive Secure Software Supply Chain Risk Management</description>
 		<generator>Hugo</generator>
-		<language>en</language>
+		<language>en-us</language>
 		
 		
 		
 		
 			<lastBuildDate>Thu, 27 Aug 2026 14:32:48 -0400</lastBuildDate>
 		
-			<atom:link href="//localhost:1313/news/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/news/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Example Post</title>
-				<link>//localhost:1313/news/example-post/</link>
+				<link>http://localhost:1313/news/example-post/</link>
 				<pubDate>Thu, 27 Aug 2026 14:32:48 -0400</pubDate>
-				<guid>//localhost:1313/news/example-post/</guid>
+				<guid>http://localhost:1313/news/example-post/</guid>
 				<description>&lt;p&gt;Short summary or teaser for this news post goes here.&lt;/p&gt;</description>
 			</item>
 	</channel>

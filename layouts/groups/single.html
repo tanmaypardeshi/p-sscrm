@@ -1,21 +1,16 @@
 {{ define "main" }}
-<article class="container practice-page">
-  <p class="breadcrumb">
-    {{ with .Site.GetPage (printf "/groups/%s" .Params.group) }}
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
-    &raquo; {{ .Title }}
-  </p>
+<article class="container group-page">
+  {{ partial "breadcrumb.html" . }}
 
   <h1>{{ if .Params.code }}{{ .Params.code }} — {{ end }}{{ .Title }}</h1>
 
   {{ .Content }}
 
-  <h2>Controls in this Practice</h2>
+  <h2>Practices in this Group</h2>
   <ul class="child-list">
     {{ $thisFile := .File.ContentBaseName }}
-    {{ range where .Site.RegularPages "Section" "controls" }}
-      {{ if eq .Params.practice $thisFile }}
+    {{ range where .Site.RegularPages "Section" "practices" }}
+      {{ if eq .Params.group $thisFile }}
         <li>
           <a href="{{ .Permalink }}">{{ if .Params.code }}{{ .Params.code }} — {{ end }}{{ .Title }}</a>
         </li>

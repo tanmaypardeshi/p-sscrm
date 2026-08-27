@@ -1,49 +1,70 @@
-nist80161:
-  name: "NIST SP 800-161"
-  full_name: "Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations"
-  url: "https://csrc.nist.gov/pubs/sp/800/161/r1/final"
-
-slsa:
-  name: "SLSA"
-  full_name: "Supply-chain Levels for Software Artifacts"
-  url: "https://slsa.dev"
+"800-161":
+  name: "800-161"
+  full_name: "NIST Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations (800-161r1) - only the subset of controls specifically identified in this document as mapping back to the Executive Order"
+  url: "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf"
 
 bsimm:
   name: "BSIMM"
-  full_name: "Building Security In Maturity Model"
-  url: "https://www.bsimm.com"
+  full_name: "Building Security In Maturity Model Version 15 (BSIMM)"
+  url: "https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf"
+
+cncf-ssc:
+  name: "CNCF-SSC"
+  full_name: "Cloud Native Computing Foundation – Software Supply Chain Best Practices (CNCF)"
+  url: "https://project.linuxfoundation.org/hubfs/CNCF_SSCP_v1.pdf"
+
+eo:
+  name: "EO"
+  full_name: "Executive Order 14028 (EO)"
+  url: "https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity"
+
+ossf-scorecard:
+  name: "OSSF-Scorecard"
+  full_name: "OpenSSF Scorecard metrics"
+  url: "https://github.com/ossf/scorecard/blob/main/docs/checks.md"
+
+owasp-scvs:
+  name: "OWASP-SCVS"
+  full_name: "Open Web Application Security Project Software Component Verification Standard Version 1.0 (OWASP-SCVS)"
+  url: "https://scvs.owasp.org/scvs/"
+
+slsa:
+  name: "SLSA"
+  full_name: "Supply-chain Levels for Software Artifacts v1.2 (SLSA)"
+  url: "https://slsa.dev/spec/v1.2/"
 
 ssdf:
-  name: "NIST SSDF"
-  full_name: "Secure Software Development Framework (SP 800-218)"
-  url: "https://csrc.nist.gov/pubs/sp/800/218/final"
+  name: "SSDF"
+  full_name: "NIST Secure Software Development Framework version 1.1 (SSDF)"
+  url: "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf"
+
+ssdf-ai:
+  name: "SSDF-AI"
+  full_name: "NIST Secure Software Development Practices for Gen AI version 1.1 (SSDF-AI)"
+  url: "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf"
+
+self-attestation:
+  name: "Self-attestation"
+  full_name: "DHS/CISA Secure Software Self-Attestation Common Form"
+  url: "https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf"
 
 samm:
   name: "OWASP SAMM"
-  full_name: "Software Assurance Maturity Model"
+  full_name: "OWASP Software Assurance Maturity Model"
   url: "https://owaspsamm.org"
 
-scvs:
-  name: "OWASP SCVS"
-  full_name: "Software Component Verification Standard"
-  url: "https://owasp.org/www-project-software-component-verification-standard/"
+s2c2f:
+  name: "S2C2F"
+  full_name: "Secure Supply Chain Consumption Framework (deprecated, folded into SLSA v1.2)"
+  url: "https://github.com/ossf/s2c2f"
 
-cra:
-  name: "EU CRA"
-  full_name: "EU Cyber Resilience Act"
-  url: "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act"
+osps:
+  name: "OSPS Baseline"
+  full_name: "Open Source Project Security Baseline"
+  url: "https://baseline.openssf.org/"
 
-iso27034:
-  name: "ISO/IEC 27034"
-  full_name: "Application Security"
-  url: "https://www.iso.org/standard/44378.html"
+closing:
+  name: "Closing the Chain"
+  full_name: "Closing the Chain: MITRE ATT&CK mitigation research study"
+  url: "https://arxiv.org/pdf/2503.12192"
 
-cisco_sscrm:
-  name: "CISA SCRM"
-  full_name: "Cybersecurity and Infrastructure Security Agency ICT SCRM"
-  url: "https://www.cisa.gov/supply-chain"
-
-spdx:
-  name: "SPDX / SBOM"
-  full_name: "Software Package Data Exchange / Software Bill of Materials"
-  url: "https://spdx.dev"

@@ -1,26 +1,34 @@
 {{ define "main" }}
-<article class="container practice-page">
-  <p class="breadcrumb">
-    {{ with .Site.GetPage (printf "/groups/%s" .Params.group) }}
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
-    &raquo; {{ .Title }}
-  </p>
+<article class="container control-page">
+  {{ partial "breadcrumb.html" . }}
 
   <h1>{{ if .Params.code }}{{ .Params.code }} — {{ end }}{{ .Title }}</h1>
 
   {{ .Content }}
 
-  <h2>Controls in this Practice</h2>
-  <ul class="child-list">
-    {{ $thisFile := .File.ContentBaseName }}
-    {{ range where .Site.RegularPages "Section" "controls" }}
-      {{ if eq .Params.practice $thisFile }}
-        <li>
-          <a href="{{ .Permalink }}">{{ if .Params.code }}{{ .Params.code }} — {{ end }}{{ .Title }}</a>
-        </li>
-      {{ end }}
+  {{ $hasMapping := false }}
+  {{ range $key, $value := .Params.frameworks }}{{ if $value }}{{ $hasMapping = true }}{{ end }}{{ end }}
+  <div class="framework-mappings">
+    <h2>Mapped Standards</h2>
+    {{ if not $hasMapping }}
+      <p class="empty-note">Standards mapping for this control is being finalized.</p>
+    {{ else }}
+      <ul class="framework-list">
+        {{ range $key, $value := .Params.frameworks }}
+          {{ if $value }}
+            {{ $fw := index hugo.Data.frameworks $key }}
+            <li class="framework-badge">
+              {{ if $fw.url }}
+                <a href="{{ $fw.url }}" target="_blank" rel="noopener">{{ $fw.name }}</a>
+              {{ else }}
+                {{ $fw.name }}
+              {{ end }}
+              : <span class="mapping-ref">{{ $value }}</span>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
     {{ end }}
-  </ul>
+  </div>
 </article>
 {{ end }}

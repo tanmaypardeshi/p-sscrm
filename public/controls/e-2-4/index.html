@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CI/CD hosting and automation | P-SSCRM: Proactive Secure Software Supply Chain Risk Management</title>
+
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="http://localhost:1313/css/main.css">
+<link rel="canonical" href="http://localhost:1313/controls/e-2-4/">
+
+
+<meta property="og:title" content="CI/CD hosting and automation">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://localhost:1313/controls/e-2-4/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="http://localhost:1313/images/social-share.png">
+
+</head>
+<body>
+  <header class="site-header">
+  <div class="container">
+    <a class="site-title" href="http://localhost:1313/">P-SSCRM: Proactive Secure Software Supply Chain Risk Management</a>
+    <nav class="site-nav">
+      <a href="http://localhost:1313/about/">About</a>
+      <a href="http://localhost:1313/groups/">Groups</a>
+      <a href="http://localhost:1313/news/">News</a>
+      <a href="http://localhost:1313/contact/">Contact</a>
+	  <a href="http://localhost:1313/frameworks/">Frameworks</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<article class="container control-page">
+  <p class="breadcrumb">
+  <a href="http://localhost:1313/groups/">Groups</a>
+  
+    
+    
+      
+        &raquo; <a href="http://localhost:1313/groups/e/">Environment</a>
+      
+      &raquo; <a href="http://localhost:1313/practices/e-2/">Safeguard build integrity</a>
+    
+    &raquo; CI/CD hosting and automation
+  
+</p>
+
+
+  <h1>E.2.4 — CI/CD hosting and automation</h1>
+
+  <p>Through automated builds, reduce human error and malicious actions and artifacts that cause the output of the build process to contain security vulnerabilities.</p>
+
+
+  
+  
+  <div class="framework-mappings">
+    <h2>Mapped Standards</h2>
+    
+      <ul class="framework-list">
+        
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://www.blackduck.com/content/dam/black-duck/en-us/reports/bsimm-report.pdf" target="_blank" rel="noopener">BSIMM</a>
+              
+              : <span class="mapping-ref">SE2.4, SE3.2</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://project.linuxfoundation.org/hubfs/CNCF_SSCP_v1.pdf" target="_blank" rel="noopener">CNCF-SSC</a>
+              
+              : <span class="mapping-ref">BP-A: Build and related CI/CD should be automated, BP-A: Standardize pipeline across projects, BP-A: Build workers should be single-use, BP-CE: Ensure software factory had minimal network connectivity, BP-CE: Pass in build worker environment and commands, BP-SA: Only allow pipeline modifications through &#39;pipeline as code&#39;</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity" target="_blank" rel="noopener">EO</a>
+              
+              : <span class="mapping-ref">4e(iv)</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://github.com/ossf/scorecard/blob/main/docs/checks.md" target="_blank" rel="noopener">OSSF-Scorecard</a>
+              
+              : <span class="mapping-ref">dangerous-workflow, token-permissions, pinned-dependencies</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://scvs.owasp.org/scvs/" target="_blank" rel="noopener">OWASP-SCVS</a>
+              
+              : <span class="mapping-ref">2, 3</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://owaspsamm.org" target="_blank" rel="noopener">OWASP SAMM</a>
+              
+              : <span class="mapping-ref">I-SB-1-A</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/secure-software-self-attestation_common-form_508.pdf" target="_blank" rel="noopener">Self-attestation</a>
+              
+              : <span class="mapping-ref">4</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://slsa.dev/spec/v1.2/" target="_blank" rel="noopener">SLSA</a>
+              
+              : <span class="mapping-ref">Build L2: Hosted build platform, Source L3: Signed and auditable provenance</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-218.pdf" target="_blank" rel="noopener">SSDF</a>
+              
+              : <span class="mapping-ref">PW.6.2</span>
+            </li>
+          
+        
+          
+            
+            <li class="framework-badge">
+              
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf" target="_blank" rel="noopener">SSDF-AI</a>
+              
+              : <span class="mapping-ref">PW.6.2</span>
+            </li>
+          
+        
+      </ul>
+    
+  </div>
+</article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 P-SSCRM: Proactive Secure Software Supply Chain Risk Management. Content licensed for open use — see repository for details.</p>
+    <nav class="footer-nav">
+      <a href="http://localhost:1313/about/">About</a>
+      <a href="http://localhost:1313/contact/">Contact</a>
+      <a href="https://tanmaypardeshi.github.io/p-sscrm" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
