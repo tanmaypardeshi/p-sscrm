@@ -23,6 +23,17 @@
         </li>
       {{ end }}
     </ul>
+
+    <p class="section-intro">MITRE ATT&amp;CK mapping data comes from <a href="https://github.com/p-sscrm/ats-to-ts" target="_blank" rel="noopener">https://github.com/p-sscrm/ats-to-ts</a>.</p>
+    <ul class="version-list">
+      {{ range hugo.Data.mitre_versions }}
+        <li>
+          {{ if .current }}Current MITRE mapping: {{ else }}Previous MITRE mapping: {{ end }}
+          <span class="version-number">v{{ .version }}</span>
+          (<a href="{{ .download_url }}" target="_blank" rel="noopener" download>download</a>)
+        </li>
+      {{ end }}
+    </ul>
   </div>
 </section>
 {{ end }}
