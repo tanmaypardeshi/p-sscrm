@@ -1,0 +1,48 @@
+title: "P-SSCRM: Proactive Secure Software Supply Chain Risk Management"
+description: "P-SSCRM is a framework for managing software supply chain security risk."
+baseurl: ""
+url: ""
+
+collections:
+  groups:
+    output: true
+    permalink: /groups/:name/
+  practices:
+    output: true
+    permalink: /practices/:name/
+  controls:
+    output: true
+    permalink: /controls/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "groups"
+    values:
+      layout: "group"
+  - scope:
+      path: ""
+      type: "practices"
+    values:
+      layout: "practice"
+  - scope:
+      path: ""
+      type: "controls"
+    values:
+      layout: "control"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - DEVELOPMENT.md
+  - README.md
+  - node_modules
+  - static

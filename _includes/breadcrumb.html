@@ -1,0 +1,22 @@
+<p class="breadcrumb">
+  <a href="{{ "/groups/" | relative_url }}">Groups</a>
+  {% if page.collection == "groups" %}
+    &raquo; {{ page.title }}
+  {% elsif page.collection == "practices" %}
+    {% assign group = site.groups | where: "slug", page.group | first %}
+    {% if group %}
+      &raquo; <a href="{{ group.url | relative_url }}">{{ group.title }}</a>
+    {% endif %}
+    &raquo; {{ page.title }}
+  {% elsif page.collection == "controls" %}
+    {% assign practice = site.practices | where: "slug", page.practice | first %}
+    {% if practice %}
+      {% assign group = site.groups | where: "slug", practice.group | first %}
+      {% if group %}
+        &raquo; <a href="{{ group.url | relative_url }}">{{ group.title }}</a>
+      {% endif %}
+      &raquo; <a href="{{ practice.url | relative_url }}">{{ practice.title }}</a>
+    {% endif %}
+    &raquo; {{ page.title }}
+  {% endif %}
+</p>

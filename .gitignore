@@ -1,10 +1,11 @@
-# Hugo build output
-/public/
-/resources/_gen/
-/.hugo_build.lock
+# Jekyll build output
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
 
-# Hugo asset cache
-.cache/
+# Bundler
+/.bundle/
+/vendor/
 
 # OS files
 .DS_Store
