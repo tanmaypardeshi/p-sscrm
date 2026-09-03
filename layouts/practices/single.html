@@ -2,7 +2,8 @@
 <article class="container practice-page">
   {{ partial "breadcrumb.html" . }}
 
-  <h1>{{ if .Params.code }}{{ .Params.code }} — {{ end }}{{ .Title }}</h1>
+  {{ if .Params.code }}<p class="page-code">{{ .Params.code }}</p>{{ end }}
+  <h1>{{ .Title }}</h1>
 
   {{ .Content }}
 

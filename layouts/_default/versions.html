@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="container">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <ul class="version-list">
+    {{ range hugo.Data.versions }}
+      <li>
+        {{ if .current }}Current version: {{ else }}Previous version: {{ end }}
+        <span class="version-number">v{{ .version }}</span>
+        (<a href="{{ .download_url }}" target="_blank" rel="noopener" download>download</a>)
+      </li>
+    {{ end }}
+  </ul>
+</article>
+{{ end }}

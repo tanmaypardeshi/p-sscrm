@@ -5,12 +5,12 @@
 </head>
 <body>
   {{ partial "header.html" . }}
-  <div class="layout">
-	  {{ partial "sidebar.html" . }}
-	  <main>
-		{{ block "main" . }}{{ end }}
-	  </main>
-  </div>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
   {{ partial "footer.html" . }}
+  <button id="back-to-top" aria-label="Back to top">&uarr;</button>
+  {{ $backToTop := resources.Get "js/back-to-top.js" | fingerprint }}
+  <script src="{{ $backToTop.RelPermalink | absURL }}" integrity="{{ $backToTop.Data.Integrity }}" defer></script>
 </body>
 </html>

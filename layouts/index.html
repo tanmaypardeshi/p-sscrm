@@ -6,8 +6,23 @@
       <div class="hero-intro">
         {{ .Content }}
       </div>
-      <a class="btn" href="{{ .Permalink }}">Read More</a>
     {{ end }}
+  </div>
+</section>
+
+<section class="home-versions">
+  <div class="container">
+    <h2>Versions</h2>
+    <p class="section-intro">Only the version labeled "current" should be used for new compliance efforts. Data comes directly from <a href="https://github.com/p-sscrm/p-sscrm" target="_blank" rel="noopener">https://github.com/p-sscrm/p-sscrm</a>.</p>
+    <ul class="version-list">
+      {{ range hugo.Data.versions }}
+        <li>
+          {{ if .current }}Current version: {{ else }}Previous version: {{ end }}
+          <span class="version-number">v{{ .version }}</span>
+          (<a href="{{ .download_url }}" target="_blank" rel="noopener" download>download</a>)
+        </li>
+      {{ end }}
+    </ul>
   </div>
 </section>
 {{ end }}

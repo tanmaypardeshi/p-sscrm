@@ -74,31 +74,52 @@ button:focus-visible {
 }
 
 .site-header {
+  position: relative;
+  z-index: 20;
   border-bottom: 1px solid var(--border);
   background: var(--surface);
 }
 
-.site-header .container {
+.site-header-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
-  min-height: var(--header-height);
+  gap: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.25rem;
+}
+
+.site-logo { flex-shrink: 0; line-height: 0; }
+
+.site-logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
 }
 
 .site-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   color: var(--text) !important;
   text-decoration: none !important;
   letter-spacing: -0.01em;
 }
 
-.site-nav { display: flex; gap: 1.3rem; flex-wrap: wrap; }
+.site-nav {
+  display: flex;
+  gap: 1.3rem;
+  flex-wrap: wrap;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
 
 .site-nav a {
   color: var(--text-muted);
@@ -108,12 +129,15 @@ button:focus-visible {
 }
 .site-nav a:hover { color: var(--accent); }
 
-.hero {
-  padding: 2.75rem 0 2.25rem;
-  border-bottom: 1px solid var(--border);
-}
+.hero,
+.home-versions { padding: 2.5rem 0; }
+.hero .container,
+.home-versions .container { padding-top: 0; padding-bottom: 0; }
 .hero h1 { max-width: 18ch; }
 .hero-intro { max-width: 62ch; font-size: 1rem; color: var(--text-muted); }
+
+.home-versions h2 { margin-top: 0; }
+.home-versions .section-intro { max-width: 62ch; color: var(--text-muted); margin-bottom: 1rem; }
 
 .btn {
   display: inline-block;
@@ -144,6 +168,18 @@ main .container { padding-top: var(--content-top-pad); padding-bottom: 2.5rem; }
 }
 .breadcrumb a { color: var(--text-muted); }
 .breadcrumb a:hover { color: var(--accent); }
+
+.page-code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--code);
+  background: var(--code-soft);
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
 
 h1 code,
 .code-badge {
@@ -222,6 +258,18 @@ h1 code,
   color: var(--text);
 }
 .framework-badge a { color: var(--code); font-weight: 600; }
+.mitre-badge { background: var(--accent-soft); border-color: rgba(37, 87, 167, 0.25); }
+.mitre-badge a { color: var(--accent); }
+
+.version-list {
+  margin: 1rem 0 0;
+  padding: 0 0 0 1.2rem;
+}
+
+.version-list li { margin: 0.3rem 0; }
+
+.version-number { font-family: var(--font-mono); font-weight: 600; }
+
 .framework-badge .mapping-ref {
   font-family: var(--font-mono);
   font-size: 0.8em;
@@ -285,6 +333,7 @@ h1 code,
 
   .sidebar {
     position: fixed;
+    z-index: 10;
     top: var(--header-height);
     left: max(1.5rem, calc((100vw - 1200px) / 2 + 1.5rem));
     width: 240px;
@@ -375,7 +424,7 @@ h1 code,
 }
 
 @media (max-width: 640px) {
-  .site-header .container { flex-direction: column; align-items: flex-start; }
+  .site-header-top { align-items: flex-start; }
   .site-nav { gap: 1rem; flex-wrap: wrap; }
   .hero { padding: 2rem 0 1.75rem; }
   main .container { padding-top: 1.25rem; }
@@ -383,4 +432,33 @@ h1 code,
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
+}
+
+#back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.15s ease, transform 0.15s ease, background 0.15s ease;
+  z-index: 30;
+}
+
+#back-to-top:hover { background: var(--accent-dark); }
+
+#back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }

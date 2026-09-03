@@ -1,12 +1,16 @@
 <header class="site-header">
-  <div class="container">
+  <div class="container site-header-top">
+    <a class="site-logo" href="{{ "" | absURL }}" aria-hidden="true">
+      <span class="site-logo-placeholder">LOGO</span>
+    </a>
     <a class="site-title" href="{{ "" | absURL }}">{{ .Site.Title }}</a>
-    <nav class="site-nav">
-      <a href="{{ "about/" | absURL }}">About</a>
-      <a href="{{ "groups/" | absURL }}">Groups</a>
-      <a href="{{ "news/" | absURL }}">News</a>
+  </div>
+  <div class="site-header-nav">
+    <nav class="container site-nav">
+      <a href="{{ "" | absURL }}">About</a>
+      <a href="{{ "groups/" | absURL }}">Current Version</a>
       <a href="{{ "frameworks/" | absURL }}">Frameworks</a>
-	  <a href="{{ "contact/" | absURL }}">Contact</a>
+      <a href="{{ "faq/" | absURL }}">FAQ</a>
     </nav>
   </div>
 </header>

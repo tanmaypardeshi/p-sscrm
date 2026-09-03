@@ -3,7 +3,7 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
 
-  {{ $officialOrder := slice "800-161" "bsimm" "cncf-ssc" "eo" "ossf-scorecard" "owasp-scvs" "slsa" "ssdf" "ssdf-ai" "self-attestation" }}
+  {{ $officialOrder := slice "800-161" "bsimm" "cncf-ssc" "eo" "ossf-scorecard" "owasp-scvs" "slsa" "ssdf" "ssdf-ai" "self-attestation" "samm" "s2c2f" "osps" }}
   <ul class="framework-index">
     {{ range $officialOrder }}
       {{ $fw := index hugo.Data.frameworks . }}
