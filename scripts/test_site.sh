@@ -83,5 +83,11 @@ ang _site_test_dev/about/index.html    'href="/frameworks/"'
 ag  _site_test_dev/index.html  'href="/faq/"'
 ag  _site_test_dev/index.html  'raw.githubusercontent.com/p-sscrm/p-sscrm'
 
+# --- Task 8: contributing standards ---
+ag _site_test_dev/framework/index.html 'id="standards"'
+ag _site_test_dev/framework/index.html '<summary>SSDF</summary>'
+ag _site_test_dev/framework/index.html 'Contributing standards'
+ag _site_test_dev/framework/index.html '>G.1.1 '
+
 rm -rf _site_test_dev _site_test_prod
 if [ "$fail" -eq 0 ]; then echo "ALL PASS"; else echo "FAILURES ABOVE"; exit 1; fi
