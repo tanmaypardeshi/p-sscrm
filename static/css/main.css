@@ -211,6 +211,7 @@ button:focus-visible {
 main .container { padding-top: var(--content-top-pad); padding-bottom: 2.5rem; }
 
 .layout main .container { margin: 0; padding-left: 0; padding-right: 0; }
+.home-section .container { padding-top: 0; padding-bottom: 0; }
 
 .breadcrumb {
   font-size: 0.82rem;
@@ -509,7 +510,7 @@ h1 code,
   .site-wordmark { padding: 0.9rem 1.25rem 0.85rem; }
   .hero { padding: 2rem 0 1.75rem; }
   main .container { padding-top: 1.25rem; }
-  .home-section { padding: 1.75rem 0; }
+  .home-section { padding: 0.9rem 0; }
   .fw-standards { margin-top: 2.5rem; }
 }
 
@@ -725,19 +726,30 @@ h1 code,
 }
 .fw-cell-controls {
   list-style: none;
-  margin: 0;
-  padding: 0.15rem 0.55rem 0.55rem 1.4rem;
+  margin: 0 0.55rem 0.5rem;
+  padding: 0.45rem 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
 }
-.fw-cell-controls li { margin: 0.28rem 0; }
-.fw-cell-controls a { color: var(--text); }
+.fw-cell-controls li { margin: 0.32rem 0; }
+.fw-cell-controls a {
+  display: flex;
+  gap: 0.45rem;
+  align-items: baseline;
+  color: var(--text);
+}
 .fw-cell-controls a:hover { color: var(--accent); }
 .fw-cell-code {
+  flex-shrink: 0;
   font-family: var(--font-mono);
-  font-size: 0.9em;
-  color: var(--text-muted);
-  margin-right: 0.25rem;
+  font-size: 0.88em;
+  font-weight: 600;
 }
 .fw-col-foot { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.35rem; }
+
+.fw-col-g .fw-cell-code { color: var(--group-g); }
+.fw-col-p .fw-cell-code { color: var(--group-p); }
+.fw-col-e .fw-cell-code { color: var(--group-e); }
+.fw-col-d .fw-cell-code { color: var(--group-d); }
 
 .fw-col-g .fw-col-head { background: var(--group-g); }
 .fw-col-p .fw-col-head { background: var(--group-p); }
@@ -763,8 +775,8 @@ h1 code,
 .btn-secondary:hover { background: var(--accent-soft); }
 .btn-disabled { background: var(--border); color: var(--text-muted) !important; cursor: not-allowed; }
 
-.home-section { padding: 1.4rem 0; }
-.home-section:first-of-type { padding-top: 2rem; }
+.home-section { padding: 1rem 0; }
+.home-section:first-of-type { padding-top: 1.75rem; }
 .home-section h2 { margin-top: 0; }
 .section-intro, .section-note { color: var(--text-muted); }
 .section-note { font-size: 0.85rem; }
