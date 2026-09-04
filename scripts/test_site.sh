@@ -96,5 +96,16 @@ ag _site_test_dev/static/css/main.css 'prefers-color-scheme: dark'
 ag _site_test_dev/static/css/main.css '.fw-diagram'
 ag _site_test_dev/static/css/main.css '.fw-control'
 
+# --- Task 10: cleanup ---
+anf _site_test_dev/groups/index.html
+anf _site_test_dev/versions/index.html
+anf _site_test_dev/practices
+anf _site_test_dev/controls
+anf _site_test_dev/frameworks/index.html
+if grep -RIlnE 'href="[^"]*/(frameworks|groups|versions|practices|controls)/' \
+     _includes _layouts index.html about.md faq.md participate.md roles.md framework.md contact.md 2>/dev/null; then
+  echo "DEAD INTERNAL LINK above"; fail=1
+fi
+
 rm -rf _site_test_dev _site_test_prod
 if [ "$fail" -eq 0 ]; then echo "ALL PASS"; else echo "FAILURES ABOVE"; exit 1; fi
