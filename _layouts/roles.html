@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="container">
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+
+  <ul class="content-list">
+    {% for role in site.data.roles %}
+      <li><a href="#role-{{ role.id | downcase }}">{{ role.name }}</a> — {{ role.tasks | size }} controls</li>
+    {% endfor %}
+  </ul>
+
+  {% for role in site.data.roles %}
+    <section class="role-block" id="role-{{ role.id | downcase }}">
+      <h2>{{ role.name }}</h2>
+      <p>{{ role.description }}</p>
+      <ul class="child-list">
+        {% for code in role.tasks %}
+          {% assign cslug = code | downcase | replace: ".", "-" %}
+          {% assign control = site.controls | where: "slug", cslug | first %}
+          {% if control %}
+            <li><a href="{{ "/framework/" | relative_url }}#{{ control.slug }}">{{ control.code }} — {{ control.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</article>

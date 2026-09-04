@@ -1,0 +1,56 @@
+{% comment %} Ordered control list: group weight -> practice weight -> control weight {% endcomment %}
+{% assign ordered_controls = "" | split: "" %}
+{% assign _groups = site.groups | sort: "weight" %}
+{% for g in _groups %}
+  {% assign _practices = site.practices | where: "group", g.slug | sort: "weight" %}
+  {% for p in _practices %}
+    {% assign _cs = site.controls | where: "practice", p.slug | sort: "weight" %}
+    {% assign ordered_controls = ordered_controls | concat: _cs %}
+  {% endfor %}
+{% endfor %}
+
+{% assign fw_order = "eo,800-161,ssdf,ssdf-ai,self-attestation,slsa,bsimm,samm,cncf-ssc,s2c2f,osps,ossf-scorecard,owasp-scvs" | split: "," %}
+
+<section class="fw-standards" id="standards">
+  <h2>Contributing standards</h2>
+  <p>P-SSCRM was built by unifying government and industry standards for software supply chain security. Every control above maps to one or more of them.</p>
+
+  <ul class="framework-index">
+    {% for key in fw_order %}
+      {% assign fw = site.data.frameworks[key] %}
+      {% if fw %}
+        <li>
+          <h3>{% if fw.url %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw.name }}</a>{% else %}{{ fw.name }}{% endif %}</h3>
+          <p>{{ fw.full_name }}</p>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <h3>Which controls cite each standard</h3>
+  <div class="reverse-map">
+    {% for key in fw_order %}
+      {% assign fw = site.data.frameworks[key] %}
+      {% if fw %}
+        <details>
+          <summary>{{ fw.name }}</summary>
+          <ul class="child-list">
+            {% for control in ordered_controls %}
+              {% assign ref = control.frameworks[key] %}
+              {% if ref %}
+                <li><a href="#{{ control.slug }}">{{ control.code }} — {{ control.title }}</a> <span class="mapping-ref">{{ ref }}</span></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </details>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if site.data.frameworks_pending and site.data.frameworks_pending.size > 0 %}
+    <h3>Standards being added</h3>
+    <ul>
+      {% for item in site.data.frameworks_pending %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  {% endif %}
+</section>

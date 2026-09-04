@@ -1,0 +1,64 @@
+---
+title: "What is P-SSCRM?"
+permalink: /about/
+description: "What P-SSCRM is, why it exists, how it was derived, and how to cite it."
+---
+
+## What it is
+
+P-SSCRM (Proactive Secure Software Supply Chain Risk Management) is a framework
+for managing software supply chain security risk. It organizes the work into
+four **Groups** — Governance, Product, Environment, and Deployment — each broken
+into **Practices** and then into concrete **Controls**. Every control states an
+objective, a fuller definition, a set of self-assessment questions, and a
+mapping to the established standards it draws from.
+
+## Why it exists
+
+Teams trying to secure a software supply chain face a crowded field of
+government and industry guidance — SSDF, SLSA, BSIMM, CNCF, OpenSSF, NIST
+800-161, Executive Order 14028, and more — with overlapping vocabulary and no
+single through-line. P-SSCRM was built to be that through-line: a single model
+whose controls are cross-referenced to those sources, so a team can work from
+one checklist and still show alignment with the standards that apply to them.
+
+## How it was derived
+
+P-SSCRM was assembled by analyzing the contributing standards and frameworks
+listed on [The Framework]({{ "/framework/" | relative_url }}#standards),
+identifying the common practices across them, and expressing each as a control
+with an explicit back-mapping. The framework definition and its mappings are
+maintained in the open at
+[github.com/p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm); the MITRE
+ATT&CK technique mappings are maintained at
+[github.com/p-sscrm/ats-to-ts](https://github.com/p-sscrm/ats-to-ts). This site
+is generated from those repositories.
+
+## Who it's for
+
+- **Security leaders** planning or benchmarking a supply chain security program.
+- **Engineers and practitioners** doing the work — start with
+  [Which controls apply to me?]({{ "/roles/" | relative_url }}).
+- **Assessors and consultants** evaluating a program against recognized practice.
+- **Researchers and standards authors** looking for a consolidated view of the
+  field.
+
+## How to cite
+
+P-SSCRM is described in the paper *P-SSCRM: Proactive Secure Software Supply
+Chain Risk Management*, available at
+[arxiv.org/abs/2404.12300](https://arxiv.org/abs/2404.12300). Please cite that
+paper and link to this site. The framework data is versioned; see the current
+version and download link in the site footer.
+
+## Contributors and stewardship
+
+P-SSCRM is stewarded by researchers at NC State University in collaboration with
+the [Secure Software Supply Chain Center (S3C2)](https://s3c2.org/). For
+questions or corrections, see [Contact]({{ "/contact/" | relative_url }}).
+
+## License
+
+The framework content is published by the upstream project; see
+[github.com/p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm) for its
+license. This website's code is in the site repository.

@@ -1,10 +1,17 @@
 <footer class="site-footer">
   <div class="container">
-    <p>{{ site.time | date: "%Y" }} {{ site.title }}. <p>
+    {% assign v = site.data.versions | where: "current", true | first %}
+    {% assign mv = site.data.mitre_versions | where: "current", true | first %}
     <nav class="footer-nav">
-      <a href="{{ "/" | relative_url }}">About</a>
       <a href="{{ "/contact/" | relative_url }}">Contact</a>
-      <a href="https://github.com/tanmaypardeshi/p-sscrm" target="_blank" rel="noopener">View on GitHub</a>
+      <a href="{{ "/faq/" | relative_url }}">FAQ</a>
+      <a href="https://github.com/p-sscrm/p-sscrm.github.io" target="_blank" rel="noopener">GitHub</a>
     </nav>
+    <p class="footer-meta">
+      Framework data v{{ v.version }} (<a href="{{ v.download_url }}" target="_blank" rel="noopener">JSON</a>)
+      &middot; MITRE ATT&amp;CK mapping v{{ mv.version }}
+      &middot; Content from <a href="https://github.com/p-sscrm/p-sscrm" target="_blank" rel="noopener">p-sscrm/p-sscrm</a>; see that repository for its license.
+    </p>
+    <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} {{ site.title }}.</p>
   </div>
 </footer>

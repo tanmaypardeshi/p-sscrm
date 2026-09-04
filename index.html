@@ -1,0 +1,73 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+{% assign v = site.data.versions | where: "current", true | first %}
+{% assign mv = site.data.mitre_versions | where: "current", true | first %}
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Proactive Secure Software Supply Chain Risk Management</p>
+    <h1>The uniting framework for secure software supply chain risk management of code dependencies, build infrastructure, AI models and data, and the humans who maintain them.</h1>
+    <p class="hero-lede">P-SSCRM collects the practice scattered across SSDF, SLSA, BSIMM, NIST 800-161, and a dozen more standards into one model of Groups, Practices, and Controls — each control mapped back to the sources it came from.</p>
+    <p class="hero-actions">
+      <a class="btn" href="{{ "/participate/" | relative_url }}">Join the Study</a>
+      <a class="btn btn-secondary" href="{{ v.download_url }}" target="_blank" rel="noopener">View the framework data (JSON)</a>
+    </p>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <h2>Who P-SSCRM is for</h2>
+    <ul class="audience-cards">
+      <li><h3>New to this?</h3><p>Start with what P-SSCRM is and why it exists.</p><a href="{{ "/about/" | relative_url }}">What is P-SSCRM?</a></li>
+      <li><h3>Planning a program</h3><p>See the whole model and where your gaps are.</p><a href="{{ "/framework/" | relative_url }}">The Framework</a></li>
+      <li><h3>Doing the work</h3><p>Find the controls that map to your role.</p><a href="{{ "/roles/" | relative_url }}">Which controls apply to me?</a></li>
+      <li><h3>Assessing or researching</h3><p>Use the controls and questions as an instrument.</p><a href="{{ "/framework/" | relative_url }}#self-assessment">Self-assessment</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <h2>What it covers</h2>
+    <p class="section-intro">Four Groups, fifteen Practices, seventy-four Controls. Follow any cell into the framework.</p>
+    {% include diagram.html %}
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <h2>How it relates to what you already use</h2>
+    <p>P-SSCRM is a uniting framework: every control maps to one or more established government and industry standards, including
+    {% assign names = "eo,800-161,ssdf,slsa,bsimm,cncf-ssc" | split: "," %}
+    {% for key in names %}{% assign fw = site.data.frameworks[key] %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}, and more.</p>
+    <p><a href="{{ "/framework/" | relative_url }}#standards">See all contributing standards and which controls cite each one &rarr;</a></p>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <h2>Use it</h2>
+    <ul class="use-links">
+      <li><a href="{{ "/framework/" | relative_url }}">Read the framework</a></li>
+      <li><a href="{{ "/framework/" | relative_url }}#self-assessment">Work through the self-assessment questions</a></li>
+      <li><a href="{{ "/participate/" | relative_url }}">Join the interview study</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <h2>Background &amp; citation</h2>
+    <p>P-SSCRM was built by unifying the common ground across the field's government and industry initiatives and standards. It is described in a paper on arXiv and stewarded with the S3C2 research center.</p>
+    <p>
+      <a href="https://arxiv.org/abs/2404.12300" target="_blank" rel="noopener">Read the paper (arXiv 2404.12300)</a> &middot;
+      <a href="https://s3c2.org/" target="_blank" rel="noopener">S3C2</a> &middot;
+      <a href="{{ "/about/" | relative_url }}">Full background</a>
+    </p>
+    <p class="section-note">Current framework data: v{{ v.version }} (<a href="{{ v.download_url }}" target="_blank" rel="noopener">JSON</a>). MITRE ATT&amp;CK mapping: v{{ mv.version }}. Data comes from <a href="https://github.com/p-sscrm/p-sscrm" target="_blank" rel="noopener">p-sscrm/p-sscrm</a> and <a href="https://github.com/p-sscrm/ats-to-ts" target="_blank" rel="noopener">p-sscrm/ats-to-ts</a>.</p>
+  </div>
+</section>

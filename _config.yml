@@ -5,35 +5,19 @@ url: ""
 
 collections:
   groups:
-    output: true
-    permalink: /groups/:name/
+    output: false
   practices:
-    output: true
-    permalink: /practices/:name/
+    output: false
   controls:
-    output: true
-    permalink: /controls/:name/
+    output: false
 
 defaults:
   - scope:
       path: ""
-      type: "groups"
-    values:
-      layout: "group"
-  - scope:
-      path: ""
-      type: "practices"
-    values:
-      layout: "practice"
-  - scope:
-      path: ""
-      type: "controls"
-    values:
-      layout: "control"
-  - scope:
-      path: ""
     values:
       layout: "page"
+
+participate_form_url: "#"  # TODO: real Google Form URL — open item, spec §15
 
 sass:
   style: compressed
@@ -42,7 +26,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - scripts
+  - docs
   - DEVELOPMENT.md
   - README.md
   - node_modules
-  - static
