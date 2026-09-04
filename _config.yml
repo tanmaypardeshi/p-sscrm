@@ -17,7 +17,7 @@ defaults:
     values:
       layout: "page"
 
-participate_form_url: "#"  # TODO: real Google Form URL — open item, spec §15
+participate_form_url: "#"
 
 sass:
   style: compressed

@@ -24,8 +24,6 @@ bundle exec jekyll build --config _config.yml,_config_production.yml
 
 Output goes to `_site/` (gitignored, not committed).
 
-Run the build smoke tests with `bash scripts/test_site.sh` (builds both configs and checks key pages, anchors, and links). Run `python3 scripts/test_sync_data.py` for the data-script unit tests.
-
 ## Repo layout
 
 - Root pages (`index.html`, `about.md`, `contact.md`, `faq.md`, `participate.md`, `roles.md`, `framework.md`) — hand-written, one per page.
