@@ -48,5 +48,14 @@ ag _site_test_dev/framework/index.html 'fw-col-d'
 ag _site_test_dev/framework/index.html 'class="fw-cell-count"'
 ag _site_test_prod/framework/index.html 'href="/p-sscrm/framework/#g-1"'
 
+# --- Task 5: roles page ---
+af _site_test_dev/roles/index.html
+ag _site_test_dev/roles/index.html  'id="role-ss"'
+ag _site_test_dev/roles/index.html  'id="role-pjm"'
+ag _site_test_dev/roles/index.html  'href="#role-ss"'
+ag _site_test_dev/roles/index.html  'href="/framework/#g-1-1"'
+ag _site_test_prod/roles/index.html 'href="/p-sscrm/framework/#g-1-1"'
+ang _site_test_dev/roles/index.html 'href="/framework/#p-2-6"'
+
 rm -rf _site_test_dev _site_test_prod
 if [ "$fail" -eq 0 ]; then echo "ALL PASS"; else echo "FAILURES ABOVE"; exit 1; fi
