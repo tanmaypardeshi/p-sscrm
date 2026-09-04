@@ -89,5 +89,12 @@ ag _site_test_dev/framework/index.html '<summary>SSDF</summary>'
 ag _site_test_dev/framework/index.html 'Contributing standards'
 ag _site_test_dev/framework/index.html '>G.1.1 '
 
+# --- Task 9: styling ---
+ag _site_test_dev/static/css/main.css '--group-g'
+ag _site_test_dev/static/css/main.css '--group-d-tint'
+ag _site_test_dev/static/css/main.css 'prefers-color-scheme: dark'
+ag _site_test_dev/static/css/main.css '.fw-diagram'
+ag _site_test_dev/static/css/main.css '.fw-control'
+
 rm -rf _site_test_dev _site_test_prod
 if [ "$fail" -eq 0 ]; then echo "ALL PASS"; else echo "FAILURES ABOVE"; exit 1; fi
