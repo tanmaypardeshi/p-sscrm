@@ -45,7 +45,7 @@ permalink: /
     <p>P-SSCRM is a uniting framework: every control maps to one or more established government and industry standards, including
     {% assign names = "eo,800-161,ssdf,slsa,bsimm,cncf-ssc" | split: "," %}
     {% for key in names %}{% assign fw = site.data.frameworks[key] %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}, and more.</p>
-    <p><a href="{{ "/framework/" | relative_url }}#standards">See all contributing standards and which controls cite each one &rarr;</a></p>
+    <p><a href="{{ "/frameworks/" | relative_url }}">See all contributing standards and which controls cite each one &rarr;</a></p>
   </div>
 </section>
 

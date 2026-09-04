@@ -599,6 +599,19 @@ h1 code,
 }
 .reverse-map summary { cursor: pointer; font-weight: 600; }
 .reverse-map .child-list { margin-top: 0.5rem; }
+.reverse-map-full {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-left: 0.4rem;
+}
+.reverse-map .mapping-ref {
+  font-family: var(--font-mono);
+  font-size: 0.78em;
+  color: var(--text-muted);
+  margin-left: 0.35rem;
+}
 
 /* ==========================================================================
    Overview diagram (SAMM-style: Groups row, Practices rows)

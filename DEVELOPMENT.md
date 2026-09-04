@@ -28,7 +28,7 @@ Output goes to `_site/` (gitignored, not committed).
 
 - Root pages (`index.html`, `about.md`, `contact.md`, `faq.md`, `participate.md`, `roles.md`, `framework.md`) — hand-written, one per page.
 - `_layouts/` — Jekyll templates that decide how each type of page looks.
-- `_includes/` — reusable snippets (`head`, `header`, `footer`, `diagram`, `standards-section`).
+- `_includes/` — reusable snippets (`head`, `header`, `footer`, `diagram`).
 - `_groups/`, `_practices/`, `_controls/` — the actual framework content, one file per item. Generated, see below. Collections with `output: false`; rendered inline on `/framework/`, no per-item pages.
 - `_data/` — structured data (YAML) the templates read from: `frameworks.yaml`, `versions.yaml`, `mitre_versions.yaml`, `roles.yaml`. Also generated.
 - `static/css/main.css` — all site styling, one file, plain CSS (no preprocessor).
