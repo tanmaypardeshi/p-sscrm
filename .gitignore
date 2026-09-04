@@ -1,5 +1,7 @@
 # Jekyll build output
 /_site/
+/_site_test_dev/
+/_site_test_prod/
 /.jekyll-cache/
 /.jekyll-metadata
 
@@ -24,3 +26,12 @@ npm-debug.log*
 # Env / secrets
 .env
 .env.local
+
+# Affinity design source files (kept locally, not part of the built site)
+*.af
+*.afdesign
+*.afphoto
+*~lock~
+
+# Brainstorming / spec process docs
+docs/superpowers/

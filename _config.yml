@@ -42,7 +42,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - scripts
+  - docs
   - DEVELOPMENT.md
   - README.md
   - node_modules
-  - static
