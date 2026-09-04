@@ -41,5 +41,12 @@ anf _site_test_dev/practices
 anf _site_test_dev/groups/g
 ag  _site_test_prod/framework/index.html 'href="/p-sscrm/roles/#'
 
+# --- Task 4: diagram ---
+ag _site_test_dev/framework/index.html 'class="fw-diagram"'
+ag _site_test_dev/framework/index.html 'fw-col-g'
+ag _site_test_dev/framework/index.html 'fw-col-d'
+ag _site_test_dev/framework/index.html 'class="fw-cell-count"'
+ag _site_test_prod/framework/index.html 'href="/p-sscrm/framework/#g-1"'
+
 rm -rf _site_test_dev _site_test_prod
 if [ "$fail" -eq 0 ]; then echo "ALL PASS"; else echo "FAILURES ABOVE"; exit 1; fi
