@@ -57,5 +57,14 @@ ag _site_test_dev/roles/index.html  'href="/framework/#g-1-1"'
 ag _site_test_prod/roles/index.html 'href="/p-sscrm/framework/#g-1-1"'
 ang _site_test_dev/roles/index.html 'href="/framework/#p-2-6"'
 
+# --- Task 6: about / faq / participate ---
+af  _site_test_dev/about/index.html
+af  _site_test_dev/participate/index.html
+af  _site_test_dev/faq/index.html
+ag  _site_test_dev/about/index.html 'arxiv.org/abs/2404.12300'
+ang _site_test_dev/faq/index.html   'TODO'
+ang faq.md                          '/frameworks/'
+ag  _site_test_dev/participate/index.html 'Join the Study'
+
 rm -rf _site_test_dev _site_test_prod
 if [ "$fail" -eq 0 ]; then echo "ALL PASS"; else echo "FAILURES ABOVE"; exit 1; fi
