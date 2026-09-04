@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Standards & frameworks P-SSCRM maps to"
+title: "Standards & Frameworks"
 permalink: /frameworks/
 description: "The government and industry standards P-SSCRM was built from. Every control maps to one or more of them."
 ---

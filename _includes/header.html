@@ -1,21 +1,19 @@
 <header class="site-header">
   <div class="site-banner">
-    <a class="site-wordmark" href="{{ "/" | relative_url }}">
+    <a class="site-wordmark" href="{{ "/" | relative_url }}" aria-label="P-SSCRM — home">
       <span class="site-wordmark-name">P&#8209;SSCRM</span>
       <span class="site-wordmark-expand">Proactive Secure Software Supply Chain Risk Management</span>
     </a>
   </div>
   <div class="site-nav-bar">
     <nav class="container site-nav" aria-label="Primary">
+      <a href="{{ "/" | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a>
       <a href="{{ "/about/" | relative_url }}"{% if page.url == "/about/" %} aria-current="page"{% endif %}>What is P&#8209;SSCRM?</a>
       <a href="{{ "/framework/" | relative_url }}"{% if page.url == "/framework/" %} aria-current="page"{% endif %}>The Framework</a>
       <a href="{{ "/roles/" | relative_url }}"{% if page.url == "/roles/" %} aria-current="page"{% endif %}>Which controls apply to me?</a>
       <a href="{{ "/frameworks/" | relative_url }}"{% if page.url == "/frameworks/" %} aria-current="page"{% endif %}>Standards</a>
       <a href="{{ "/participate/" | relative_url }}"{% if page.url == "/participate/" %} aria-current="page"{% endif %}>Join the Study</a>
-      <a class="site-nav-ext" href="https://github.com/p-sscrm/p-sscrm.github.io" target="_blank" rel="noopener">
-        GitHub
-        <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 2h6a1 1 0 0 1 1 1v6h-1.5V4.56L4.06 12 3 10.94 10.44 3.5H4.5V2z"/></svg>
-      </a>
+      <a href="{{ "/contact/" | relative_url }}"{% if page.url == "/contact/" %} aria-current="page"{% endif %}>Contact</a>
     </nav>
   </div>
 </header>

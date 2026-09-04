@@ -14,11 +14,11 @@
   --code-soft: #E6F5F1;
 
   --group-g: #2557A7;
-  --group-p: #0F6E5C;
+  --group-p: #2F7D4F;
   --group-e: #8A4B2E;
   --group-d: #6B4EA8;
   --group-g-tint: #EAF1FB;
-  --group-p-tint: #E6F5F1;
+  --group-p-tint: #E8F3EC;
   --group-e-tint: #F6ECE4;
   --group-d-tint: #EFEAF8;
 
@@ -28,7 +28,7 @@
 
   --max-width: 900px;
   --radius: 6px;
-  --content-top-pad: 1.75rem;
+  --content-top-pad: 2rem;
   --header-height: 52px;
 }
 
@@ -62,8 +62,8 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: clamp(1.9rem, 1.3rem + 2.6vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.4rem, 1.15rem + 1vw, 1.7rem); font-weight: 700; margin-top: 1.6em; letter-spacing: -0.01em; }
-h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1.3em; }
+h2 { font-size: clamp(1.4rem, 1.15rem + 1vw, 1.7rem); font-weight: 700; margin-top: 1.15em; letter-spacing: -0.01em; }
+h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1em; }
 h4 { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em; }
 
 p { margin: 0 0 0.85em; color: var(--text); }
@@ -110,6 +110,7 @@ button:focus-visible {
   opacity: 0.85;
   margin-top: 0.25rem;
 }
+.site-wordmark:hover .site-wordmark-name { text-decoration: underline; }
 
 .site-nav-bar {
   position: sticky;
@@ -139,7 +140,7 @@ button:focus-visible {
 .site-nav-ext { display: inline-flex; align-items: center; gap: 0.3rem; }
 .site-nav-ext svg { opacity: 0.65; }
 
-.hero { padding: 3rem 0 2.75rem; }
+.hero { padding: 2.5rem 0 2rem; }
 .hero .container { padding-top: 0; padding-bottom: 0; }
 .hero-brand {
   font-size: clamp(2.6rem, 1.5rem + 4.6vw, 4.4rem);
@@ -273,25 +274,31 @@ h1 code,
 }
 
 .framework-badge {
-  background: var(--code-soft);
-  border: 1px solid rgba(15, 110, 92, 0.2);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.3rem 0.75rem;
   font-size: 0.82rem;
-  color: var(--text);
+  color: var(--text-muted);
 }
-.framework-badge a { color: var(--code); font-weight: 600; }
+.framework-badge a { color: var(--accent); font-weight: 600; }
 .mitre-badge { background: var(--accent-soft); border-color: rgba(37, 87, 167, 0.25); }
 .mitre-badge a { color: var(--accent); }
 
 .version-list {
-  margin: 1rem 0 0;
+  margin: 0.4rem 0 0;
   padding: 0 0 0 1.2rem;
 }
 
 .version-list li { margin: 0.3rem 0; }
 
 .version-number { font-family: var(--font-mono); font-weight: 600; }
+
+.version-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 1.4rem 0 0;
+}
 
 .framework-badge .mapping-ref {
   font-family: var(--font-mono);
@@ -356,7 +363,7 @@ h1 code,
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: var(--content-top-pad) 1.5rem 0;
   align-items: flex-start;
 }
 
@@ -471,7 +478,7 @@ h1 code,
   .site-wordmark { padding: 0.9rem 1.25rem 0.85rem; }
   .hero { padding: 2rem 0 1.75rem; }
   main .container { padding-top: 1.25rem; }
-  .home-section { padding: 2.25rem 0; }
+  .home-section { padding: 1.75rem 0; }
   .fw-standards { margin-top: 2.5rem; }
 }
 
@@ -716,7 +723,7 @@ h1 code,
 .btn-secondary:hover { background: var(--accent-soft); }
 .btn-disabled { background: var(--border); color: var(--text-muted) !important; cursor: not-allowed; }
 
-.home-section { padding: 2.75rem 0; }
+.home-section { padding: 2rem 0; }
 .home-section h2 { margin-top: 0; }
 .section-intro, .section-note { color: var(--text-muted); }
 .section-note { font-size: 0.85rem; }

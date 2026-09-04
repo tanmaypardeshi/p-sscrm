@@ -1,7 +1,6 @@
 <footer class="site-footer">
   <div class="container">
     {% assign v = site.data.versions | where: "current", true | first %}
-    {% assign mv = site.data.mitre_versions | where: "current", true | first %}
     <nav class="footer-nav" aria-label="Footer">
       <a href="{{ "/about/" | relative_url }}">
         <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 1.5A6.5 6.5 0 1 0 8 14.5 6.5 6.5 0 0 0 8 1.5Zm.9 10.2H7.1V7.1h1.8v4.6ZM8 5.9a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>
@@ -20,15 +19,6 @@
         GitHub
       </a>
     </nav>
-    <p class="footer-meta">
-      Framework data <strong>v{{ v.version }}</strong> (<a href="{{ v.download_url }}" target="_blank" rel="noopener">JSON</a>) from
-      <a href="https://github.com/p-sscrm/p-sscrm" target="_blank" rel="noopener">p-sscrm/p-sscrm</a>
-      &middot;
-      MITRE ATT&amp;CK mapping <strong>v{{ mv.version }}</strong> (<a href="{{ mv.download_url }}" target="_blank" rel="noopener">JSON</a>) from
-      <a href="https://github.com/p-sscrm/ats-to-ts" target="_blank" rel="noopener">p-sscrm/ats-to-ts</a>
-      &middot;
-      full version history on <a href="{{ "/about/" | relative_url }}#versions">About</a>
-    </p>
-    <p class="footer-meta footer-license">Framework content is licensed by the upstream project &mdash; see <a href="https://github.com/p-sscrm/p-sscrm" target="_blank" rel="noopener">p-sscrm/p-sscrm</a>.</p>
+    <p class="footer-meta">{{ site.time | date: "%Y" }} P&#8209;SSCRM Documentation &middot; Version {{ v.version }}</p>
   </div>
 </footer>
