@@ -66,5 +66,22 @@ ang _site_test_dev/faq/index.html   'TODO'
 ang faq.md                          '/frameworks/'
 ag  _site_test_dev/participate/index.html 'Join the Study'
 
+# --- Task 7: landing + nav ---
+ag  _site_test_dev/index.html  'class="hero"'
+ag  _site_test_dev/index.html  'code dependencies, build infrastructure, AI models and data'
+ag  _site_test_dev/index.html  'class="fw-diagram"'
+ag  _site_test_dev/index.html  'href="/participate/"'
+ag  _site_test_dev/index.html  'href="/framework/#standards"'
+ag  _site_test_prod/index.html 'href="/p-sscrm/framework/#g"'
+ag  _site_test_prod/index.html 'href="/p-sscrm/framework/#g-1"'
+ag  _site_test_dev/index.html  'arxiv.org/abs/2404.12300'
+ag  _site_test_dev/about/index.html    'href="/about/"'
+ag  _site_test_dev/about/index.html    'href="/framework/"'
+ag  _site_test_dev/about/index.html    'href="/roles/"'
+ang _site_test_dev/about/index.html    'href="/groups/"'
+ang _site_test_dev/about/index.html    'href="/frameworks/"'
+ag  _site_test_dev/index.html  'href="/faq/"'
+ag  _site_test_dev/index.html  'raw.githubusercontent.com/p-sscrm/p-sscrm'
+
 rm -rf _site_test_dev _site_test_prod
 if [ "$fail" -eq 0 ]; then echo "ALL PASS"; else echo "FAILURES ABOVE"; exit 1; fi
