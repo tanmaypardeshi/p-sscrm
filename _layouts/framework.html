@@ -47,7 +47,7 @@ layout: default
 
     {% for group in groups %}
       {% assign practices = site.practices | where: "group", group.slug | sort: "weight" %}
-      <section class="fw-group" id="{{ group.slug }}">
+      <section class="fw-group fw-group-{{ group.slug }}" id="{{ group.slug }}">
         <h2>{{ group.title }} <span class="code-badge">{{ group.code }}</span></h2>
         <p>{{ group.description }}</p>
 

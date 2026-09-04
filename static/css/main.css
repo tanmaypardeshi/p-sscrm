@@ -249,6 +249,12 @@ h1 code,
   vertical-align: middle;
 }
 
+/* Framework page: colour each control/practice/group code by its Group */
+.fw-group-g .code-badge { color: var(--group-g); background: var(--group-g-tint); }
+.fw-group-p .code-badge { color: var(--group-p); background: var(--group-p-tint); }
+.fw-group-e .code-badge { color: var(--group-e); background: var(--group-e-tint); }
+.fw-group-d .code-badge { color: var(--group-d); background: var(--group-d-tint); }
+
 .content-list,
 .child-list {
   list-style: none;
