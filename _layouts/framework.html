@@ -1,0 +1,123 @@
+---
+layout: default
+---
+{% assign groups = site.groups | sort: "weight" %}
+<div class="layout framework-layout">
+  <nav class="sidebar" aria-label="Framework contents">
+    <details class="sidebar-collapse">
+      <summary>Contents</summary>
+      <ul class="sidebar-groups">
+        {% for group in groups %}
+          {% assign practices = site.practices | where: "group", group.slug | sort: "weight" %}
+          <li>
+            <details open>
+              <summary><a href="#{{ group.slug }}">{{ group.title }}</a></summary>
+              <ul class="sidebar-practices">
+                {% for practice in practices %}
+                  {% assign controls = site.controls | where: "practice", practice.slug | sort: "weight" %}
+                  <li>
+                    <details>
+                      <summary><a href="#{{ practice.slug }}">{{ practice.code }} {{ practice.title }}</a></summary>
+                      <ul class="sidebar-controls">
+                        {% for control in controls %}
+                          <li><a href="#{{ control.slug }}">{{ control.code }} {{ control.title }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </details>
+                  </li>
+                {% endfor %}
+              </ul>
+            </details>
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
+  </nav>
+
+  <article class="framework-main">
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+
+    <section class="self-assessment-note" id="self-assessment">
+      <h2>Assess yourself</h2>
+      <p>Every control below carries a short set of questions. Work through them with your team for an informal, qualitative self-assessment — there is no score. For a formal, interview-based assessment, see <a href="{{ "/participate/" | relative_url }}">Join the Study</a>.</p>
+    </section>
+
+    {% include diagram.html %}
+
+    {% for group in groups %}
+      {% assign practices = site.practices | where: "group", group.slug | sort: "weight" %}
+      <section class="fw-group" id="{{ group.slug }}">
+        <h2>{{ group.title }} <span class="code-badge">{{ group.code }}</span></h2>
+        <p>{{ group.description }}</p>
+
+        {% for practice in practices %}
+          {% assign controls = site.controls | where: "practice", practice.slug | sort: "weight" %}
+          <section class="fw-practice" id="{{ practice.slug }}">
+            <h3>{{ practice.title }} <span class="code-badge">{{ practice.code }}</span></h3>
+            <p>{{ practice.description }}</p>
+
+            {% for control in controls %}
+              <div class="fw-control" id="{{ control.slug }}">
+                <h4><span class="code-badge">{{ control.code }}</span> {{ control.title }}</h4>
+                <div class="fw-objective">{{ control.content }}</div>
+                {% if control.definition %}<p class="fw-definition">{{ control.definition }}</p>{% endif %}
+
+                {% if control.questions and control.questions.size > 0 %}
+                  <div class="fw-block fw-questions">
+                    <p class="fw-label">Assess yourself</p>
+                    <ul>
+                      {% for q in control.questions %}<li>{{ q.text }}</li>{% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+
+                {% assign has_mapping = false %}
+                {% for pair in control.frameworks %}{% if pair[1] %}{% assign has_mapping = true %}{% endif %}{% endfor %}
+                {% if has_mapping %}
+                  <div class="fw-block">
+                    <p class="fw-label">Standard mappings</p>
+                    <ul class="framework-list">
+                      {% for pair in control.frameworks %}{% if pair[1] %}
+                        {% assign fw = site.data.frameworks[pair[0]] %}
+                        <li class="framework-badge">
+                          {% if fw.url %}<a href="{{ fw.url }}" target="_blank" rel="noopener">{{ fw.name }}</a>{% else %}{{ fw.name }}{% endif %}
+                          <span class="mapping-ref">{{ pair[1] }}</span>
+                        </li>
+                      {% endif %}{% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+
+                {% if control.mitre_attack %}
+                  <div class="fw-block">
+                    <p class="fw-label">ATT&amp;CK techniques</p>
+                    <ul class="framework-list">
+                      {% for technique in control.mitre_attack %}
+                        <li class="framework-badge mitre-badge"><a href="https://attack.mitre.org/techniques/{{ technique }}/" target="_blank" rel="noopener">{{ technique }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+
+                {% if control.roles %}
+                  <div class="fw-block">
+                    <p class="fw-label">Roles</p>
+                    <ul class="framework-list">
+                      {% for rid in control.roles %}
+                        {% assign role = site.data.roles | where: "id", rid | first %}
+                        <li class="framework-badge role-badge"><a href="{{ "/roles/" | relative_url }}#role-{{ rid | downcase }}">{{ role.name | default: rid }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </section>
+        {% endfor %}
+      </section>
+    {% endfor %}
+
+    {% include standards-section.html %}
+  </article>
+</div>

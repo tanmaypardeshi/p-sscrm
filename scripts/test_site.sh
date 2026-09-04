@@ -26,5 +26,20 @@ ag  _site_test_prod/index.html '/p-sscrm/static/css/main.css'
 ag  _site_test_prod/index.html '/p-sscrm/static/js/back-to-top.js'
 ang _site_test_dev/index.html  'images/social-share.png'
 
+# --- Task 3: framework page ---
+af  _site_test_dev/framework/index.html
+ag  _site_test_dev/framework/index.html 'id="self-assessment"'
+ag  _site_test_dev/framework/index.html 'id="g"'
+ag  _site_test_dev/framework/index.html 'id="g-1"'
+ag  _site_test_dev/framework/index.html 'id="g-1-1"'
+ag  _site_test_dev/framework/index.html 'id="e-3-10"'
+ag  _site_test_dev/framework/index.html 'class="sidebar-groups"'
+ag  _site_test_dev/framework/index.html 'href="#g-1-1"'
+anf _site_test_dev/controls
+anf _site_test_dev/practices
+# per-item group pages gone (groups.md root page still emits /groups/ until Task 10)
+anf _site_test_dev/groups/g
+ag  _site_test_prod/framework/index.html 'href="/p-sscrm/roles/#'
+
 rm -rf _site_test_dev _site_test_prod
 if [ "$fail" -eq 0 ]; then echo "ALL PASS"; else echo "FAILURES ABOVE"; exit 1; fi
