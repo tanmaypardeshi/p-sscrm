@@ -62,3 +62,33 @@ questions or corrections, see [Contact]({{ "/contact/" | relative_url }}).
 The framework content is published by the upstream project; see
 [github.com/p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm) for its
 license. This website's code is in the site repository.
+
+## Versions
+{: #versions}
+
+Only the version marked **current** should be used for new compliance work;
+earlier versions are kept for reference. Data comes directly from
+[p-sscrm/p-sscrm](https://github.com/p-sscrm/p-sscrm) and
+[p-sscrm/ats-to-ts](https://github.com/p-sscrm/ats-to-ts).
+
+**Framework**
+<ul class="version-list">
+  {% for ver in site.data.versions %}
+    <li>
+      {% if ver.current %}<strong>Current</strong>{% else %}Previous{% endif %} &mdash;
+      <span class="version-number">v{{ ver.version }}</span>
+      (<a href="{{ ver.download_url }}" target="_blank" rel="noopener">JSON</a>)
+    </li>
+  {% endfor %}
+</ul>
+
+**MITRE ATT&CK mapping**
+<ul class="version-list">
+  {% for ver in site.data.mitre_versions %}
+    <li>
+      {% if ver.current %}<strong>Current</strong>{% else %}Previous{% endif %} &mdash;
+      <span class="version-number">v{{ ver.version }}</span>
+      (<a href="{{ ver.download_url }}" target="_blank" rel="noopener">JSON</a>)
+    </li>
+  {% endfor %}
+</ul>

@@ -1,28 +1,35 @@
 {% assign dgroups = site.groups | sort: "weight" %}
-{% assign glosses = "g|Policy, compliance, measurement, and accountability.;p|Securing the software you build and the components it depends on.;e|Protecting source code, components, and build infrastructure from tampering.;d|Finding and fixing vulnerabilities in what you have shipped." | split: ";" %}
-<div class="fw-diagram" role="group" aria-label="P-SSCRM at a glance: four Groups">
-  {% for group in dgroups %}
-    {% assign gloss = "" %}
-    {% for pair in glosses %}
-      {% assign kv = pair | split: "|" %}
-      {% if kv[0] == group.slug %}{% assign gloss = kv[1] %}{% endif %}
-    {% endfor %}
-    {% assign practices = site.practices | where: "group", group.slug | sort: "weight" %}
-    {% assign group_control_total = 0 %}
-    <div class="fw-col fw-col-{{ group.slug }}">
-      <a class="fw-col-head" href="{{ "/framework/" | relative_url }}#{{ group.slug }}">
-        <span class="fw-col-name">{{ group.title }}</span>
-        <span class="fw-col-gloss">{{ gloss }}</span>
-      </a>
-      {% for practice in practices %}
-        {% assign pc = site.controls | where: "practice", practice.slug | size %}
-        {% assign group_control_total = group_control_total | plus: pc %}
-        <a class="fw-cell" href="{{ "/framework/" | relative_url }}#{{ practice.slug }}">
-          <span class="fw-cell-name">{{ practice.title }}</span>
-          <span class="fw-cell-count">{{ pc }}</span>
-        </a>
+{% assign glosses = "g|Policy, compliance, measurement, accountability.;p|The software you build and its dependencies.;e|Source code, components, build infrastructure.;d|Vulnerabilities in what you have shipped." | split: ";" %}
+<figure class="fw-figure">
+  <div class="fw-axis" aria-hidden="true">
+    <span class="fw-axis-label fw-axis-groups">Groups</span>
+    <span class="fw-axis-label fw-axis-practices">Practices</span>
+  </div>
+  <div class="fw-diagram" role="group" aria-label="P-SSCRM at a glance: four Groups, their Practices, and control counts">
+    {% for group in dgroups %}
+      {% assign gloss = "" %}
+      {% for pair in glosses %}
+        {% assign kv = pair | split: "|" %}
+        {% if kv[0] == group.slug %}{% assign gloss = kv[1] %}{% endif %}
       {% endfor %}
-      <div class="fw-col-foot">{{ practices | size }} practices &middot; {{ group_control_total }} controls</div>
-    </div>
-  {% endfor %}
-</div>
+      {% assign practices = site.practices | where: "group", group.slug | sort: "weight" %}
+      {% assign group_control_total = 0 %}
+      <div class="fw-col fw-col-{{ group.slug }}">
+        <a class="fw-col-head" href="{{ "/framework/" | relative_url }}#{{ group.slug }}">
+          <span class="fw-col-name">{{ group.title }}</span>
+          <span class="fw-col-gloss">{{ gloss }}</span>
+        </a>
+        {% for practice in practices %}
+          {% assign pc = site.controls | where: "practice", practice.slug | size %}
+          {% assign group_control_total = group_control_total | plus: pc %}
+          <a class="fw-cell" href="{{ "/framework/" | relative_url }}#{{ practice.slug }}">
+            <span class="fw-cell-name">{{ practice.title }}</span>
+            <span class="fw-cell-count" title="{{ pc }} controls">{{ pc }}<span class="fw-cell-count-unit"> controls</span></span>
+          </a>
+        {% endfor %}
+        <div class="fw-col-foot">{{ practices | size }} practices &middot; {{ group_control_total }} controls</div>
+      </div>
+    {% endfor %}
+  </div>
+  <figcaption class="fw-figcaption">Each column is a Group, each tile a Practice. The number on a tile is how many Controls that Practice contains. Tiles link into <a href="{{ "/framework/" | relative_url }}">the framework</a>.</figcaption>
+</figure>
