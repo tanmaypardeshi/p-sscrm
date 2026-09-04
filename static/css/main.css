@@ -87,13 +87,35 @@ button:focus-visible {
 
 .site-banner { background: var(--accent); color: #fff; }
 .site-wordmark {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.1rem 1.5rem 1rem;
   color: #fff !important;
   text-decoration: none !important;
 }
+/* Logo slot — replace .site-logo-placeholder with an <img> when the mark lands */
+.site-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.site-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.site-logo-placeholder {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.site-wordmark-text { min-width: 0; }
 .site-wordmark-name {
   display: block;
   font-family: var(--font-display);
@@ -140,7 +162,11 @@ button:focus-visible {
 .site-nav-ext { display: inline-flex; align-items: center; gap: 0.3rem; }
 .site-nav-ext svg { opacity: 0.65; }
 
-.hero { padding: 2.5rem 0 2rem; }
+.hero {
+  padding: 2.75rem 0 2.5rem;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--border);
+}
 .hero .container { padding-top: 0; padding-bottom: 0; }
 .hero-brand {
   font-size: clamp(2.6rem, 1.5rem + 4.6vw, 4.4rem);
@@ -614,7 +640,7 @@ h1 code,
 }
 
 /* ==========================================================================
-   Overview diagram (SAMM-style: Groups row, Practices rows)
+   Overview diagram — columns = Groups, expandable tiles = Practices
    ========================================================================== */
 .fw-figure { margin: 1.5rem 0 0; }
 .fw-diagram {
@@ -623,7 +649,6 @@ h1 code,
   gap: 0.7rem;
   align-items: start;
 }
-.fw-axis { display: none; }
 .fw-figcaption {
   font-size: 0.78rem;
   color: var(--text-muted);
@@ -640,37 +665,6 @@ h1 code,
   border: 0;
 }
 
-@media (min-width: 760px) {
-  .fw-figure {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    column-gap: 1rem;
-  }
-  .fw-figcaption { grid-column: 2; }
-  .fw-axis {
-    display: flex;
-    flex-direction: column;
-    border-right: 2px solid var(--border);
-    padding-right: 0.9rem;
-    text-align: right;
-  }
-  .fw-axis-label {
-    font-family: var(--font-mono);
-    font-size: 0.66rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
-  }
-  .fw-axis-groups {
-    min-height: 4.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .fw-axis-practices { padding-top: 1.3rem; }
-}
-
 .fw-col { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
 .fw-col-head {
   display: flex;
@@ -684,28 +678,42 @@ h1 code,
 }
 .fw-col-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
 .fw-col-gloss { font-size: 0.72rem; line-height: 1.35; opacity: 0.92; margin-top: 0.2rem; }
+
 .fw-cell {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+.fw-cell-summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.6rem;
-  border: 1px solid transparent;
+  padding: 0.5rem 0.55rem 0.5rem 1.4rem;
+  position: relative;
+  cursor: pointer;
   border-radius: var(--radius);
-  text-decoration: none !important;
-  color: var(--text) !important;
-  font-size: 0.82rem;
-  line-height: 1.3;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  list-style: none;
+  transition: background 0.12s ease;
 }
+.fw-cell-summary::-webkit-details-marker { display: none; }
+.fw-cell-summary::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 50%;
+  width: 5px; height: 5px;
+  margin-top: -4px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.12s ease;
+  opacity: 0.55;
+}
+.fw-cell[open] > .fw-cell-summary::before { transform: rotate(45deg); }
+.fw-cell-summary:hover .fw-cell-name { text-decoration: underline; }
 .fw-cell-name { min-width: 0; }
-.fw-cell:hover, .fw-cell:focus-visible {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
-  border-color: rgba(0, 0, 0, 0.14);
-}
-.fw-cell:hover .fw-cell-name,
-.fw-cell:focus-visible .fw-cell-name { text-decoration: underline; }
 .fw-cell-count {
   font-family: var(--font-mono);
   font-weight: 600;
@@ -714,6 +722,20 @@ h1 code,
   border-radius: 999px;
   color: #fff;
   flex-shrink: 0;
+}
+.fw-cell-controls {
+  list-style: none;
+  margin: 0;
+  padding: 0.15rem 0.55rem 0.55rem 1.4rem;
+}
+.fw-cell-controls li { margin: 0.28rem 0; }
+.fw-cell-controls a { color: var(--text); }
+.fw-cell-controls a:hover { color: var(--accent); }
+.fw-cell-code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
 }
 .fw-col-foot { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.35rem; }
 
@@ -741,7 +763,8 @@ h1 code,
 .btn-secondary:hover { background: var(--accent-soft); }
 .btn-disabled { background: var(--border); color: var(--text-muted) !important; cursor: not-allowed; }
 
-.home-section { padding: 2rem 0; }
+.home-section { padding: 1.4rem 0; }
+.home-section:first-of-type { padding-top: 2rem; }
 .home-section h2 { margin-top: 0; }
 .section-intro, .section-note { color: var(--text-muted); }
 .section-note { font-size: 0.85rem; }

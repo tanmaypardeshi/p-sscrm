@@ -1,11 +1,7 @@
 {% assign dgroups = site.groups | sort: "weight" %}
 {% assign glosses = "g|Policy, compliance, measurement, accountability.;p|The software you build and its dependencies.;e|Source code, components, build infrastructure.;d|Vulnerabilities in what you have shipped." | split: ";" %}
 <figure class="fw-figure">
-  <div class="fw-axis" aria-hidden="true">
-    <span class="fw-axis-label fw-axis-groups">Groups</span>
-    <span class="fw-axis-label fw-axis-practices">Practices</span>
-  </div>
-  <div class="fw-diagram" role="group" aria-label="P-SSCRM at a glance: four Groups, their Practices, and control counts">
+  <div class="fw-diagram" role="group" aria-label="P-SSCRM at a glance: four Groups, their Practices, and Controls">
     {% for group in dgroups %}
       {% assign gloss = "" %}
       {% for pair in glosses %}
@@ -20,16 +16,23 @@
           <span class="fw-col-gloss">{{ gloss }}</span>
         </a>
         {% for practice in practices %}
-          {% assign pc = site.controls | where: "practice", practice.slug | size %}
-          {% assign group_control_total = group_control_total | plus: pc %}
-          <a class="fw-cell" href="{{ "/framework/" | relative_url }}#{{ practice.slug }}">
-            <span class="fw-cell-name">{{ practice.title }}</span>
-            <span class="fw-cell-count" title="{{ pc }} controls">{{ pc }}<span class="fw-cell-count-unit"> controls</span></span>
-          </a>
+          {% assign pcontrols = site.controls | where: "practice", practice.slug | sort: "weight" %}
+          {% assign group_control_total = group_control_total | plus: pcontrols.size %}
+          <details class="fw-cell">
+            <summary class="fw-cell-summary">
+              <span class="fw-cell-name">{{ practice.title }}</span>
+              <span class="fw-cell-count" title="{{ pcontrols.size }} controls">{{ pcontrols.size }}<span class="fw-cell-count-unit"> controls</span></span>
+            </summary>
+            <ul class="fw-cell-controls">
+              {% for control in pcontrols %}
+                <li><a href="{{ "/framework/" | relative_url }}#{{ control.slug }}"><span class="fw-cell-code">{{ control.code }}</span> {{ control.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </details>
         {% endfor %}
         <div class="fw-col-foot">{{ practices | size }} practices &middot; {{ group_control_total }} controls</div>
       </div>
     {% endfor %}
   </div>
-  <figcaption class="fw-figcaption">Each column is a Group, each tile a Practice. The number on a tile is how many Controls that Practice contains. Tiles link into <a href="{{ "/framework/" | relative_url }}">the framework</a>.</figcaption>
+  <figcaption class="fw-figcaption">Each column is a Group and each tile a Practice &mdash; open a tile for its Controls, or go to <a href="{{ "/framework/" | relative_url }}">the full framework</a>.</figcaption>
 </figure>

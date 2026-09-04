@@ -1,8 +1,14 @@
 <header class="site-header">
   <div class="site-banner">
     <a class="site-wordmark" href="{{ "/" | relative_url }}" aria-label="P-SSCRM — home">
-      <span class="site-wordmark-name">P&#8209;SSCRM</span>
-      <span class="site-wordmark-expand">Proactive Secure Software Supply Chain Risk Management</span>
+      <span class="site-logo" aria-hidden="true">
+        {%- comment -%} TODO: swap for <img src="{{ "/static/img/logo.svg" | relative_url }}" alt=""> when the mark is ready {%- endcomment -%}
+        <span class="site-logo-placeholder">P</span>
+      </span>
+      <span class="site-wordmark-text">
+        <span class="site-wordmark-name">P&#8209;SSCRM</span>
+        <span class="site-wordmark-expand">Proactive Secure Software Supply Chain Risk Management</span>
+      </span>
     </a>
   </div>
   <div class="site-nav-bar">
